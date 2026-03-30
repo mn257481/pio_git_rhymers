@@ -4,8 +4,8 @@ public class DefaultCountingOutRhymer {
 
     private static final int EMPTY = -1;
     private static final int DEFAULT = -1;
-    private static final int CAPACITY = -1;
-    private int[] numbers = new int[12];
+    private static final int CAPACITY = 12;
+    private int[] numbers = new int[CAPACITY];
 
     public int total = EMPTY;
 
