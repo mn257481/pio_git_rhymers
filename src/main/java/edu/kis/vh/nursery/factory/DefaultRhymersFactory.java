@@ -22,4 +22,6 @@ public class DefaultRhymersFactory {
         return new HanoiRhymer();
     }
 
+    // TODO These can be static methods instead
+
 }
