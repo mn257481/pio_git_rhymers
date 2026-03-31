@@ -6,9 +6,12 @@ package edu.kis.vh.nursery;
  */
 public class DefaultCountingOutRhymer {
 
-    private int[] numbers = new int[12];
+    private static final int EMPTY = -1;
+    private static final int DEFAULT = -1;
+    private static final int CAPACITY = 12;
+    private int[] numbers = new int[CAPACITY];
 
-    public int total = -1;
+    public int total = EMPTY;
 
     /**
      * Puts the number inside the rhymer.
@@ -25,7 +28,7 @@ public class DefaultCountingOutRhymer {
      * @return Whether there are any numbers in the rhymer.
      */
     public boolean callCheck() {
-        return total == -1;
+        return total == EMPTY;
     }
 
     /**
@@ -33,7 +36,7 @@ public class DefaultCountingOutRhymer {
      * @return Whether the rhymer is full or not.
      */
     public boolean isFull() {
-        return total == 11;
+        return total == CAPACITY-1;
     }
 
     /**
@@ -42,7 +45,7 @@ public class DefaultCountingOutRhymer {
      */
     protected int peekaboo() {
         if (callCheck())
-            return -1;
+            return DEFAULT;
         return numbers[total];
     }
 
@@ -52,8 +55,12 @@ public class DefaultCountingOutRhymer {
      */
     public int countOut() {
         if (callCheck())
-            return -1;
+            return DEFAULT;
         return numbers[total--];
+    }
+
+    public int getTotal() {
+        return total;
     }
 
 }
