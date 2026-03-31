@@ -24,6 +24,8 @@ class IntLinkedList {
         return false;
     }
 
+    // TODO isFull is redundant if the list can never be full
+
     public int top() {
         if (isEmpty())
             return EMPTY;
